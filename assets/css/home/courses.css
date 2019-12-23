@@ -1,0 +1,79 @@
+/* COURSE COLORS
+ * a : #e74c3c (Red)
+ * b : #f1c40f (Yellow)
+ * c : #3498db (Blue)
+ * d : #9b59b6 (Purple)
+ * e : #2ecc71 (Green)
+ * f : #e67e22 (Orange)
+ * g : #bdc3c7 (Grey) 
+ */
+
+button.course-button {
+    width: 100%;
+    padding: 0.75em 30px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+button.course-button * {
+    font-size: 18px; 
+    font-weight: 300;
+    color: #7f8c8d;
+}
+
+.course-color {
+    width: 5px;
+    height: 25px;
+    border-radius: 1000px;
+    white-space: nowrap;
+    transition: width 0.25s, height 0.25s;
+}
+
+.course-color#a {
+    background-color: #e74c3c;
+}
+
+.course-color#b {
+    background-color: #f1c40f;
+}
+
+.course-color#c {
+    background-color: #3498db;
+}
+
+.course-color#d {
+    background-color: #9b59b6;
+}
+
+.course-color#e {
+    background-color: #2ecc71;
+}
+
+.course-color#f {
+    background-color: #e67e22;
+}
+
+.course-color#g {
+    background-color: #bdc3c7;
+}
+
+button.course-button span  {
+    padding-left: 15px;
+    transition: color 0.25s, font-size 0.25s;
+}
+
+button.course-button:focus span {
+    font-size: 20px; 
+    font-weight: 400;
+    color: white;
+}
+
+button.course-button:focus .course-color {
+    width: 150%;
+    height: 28px;
+    padding-top: 2px;
+}
+
+button.course-button:hover span {
+    font-weight: 400;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="assets/css/home/main.css">
+  <link rel="stylesheet" href="assets/css/home/semesters.css">
+  <link rel="stylesheet" href="assets/css/home/courses.css">
+  <link rel="stylesheet" href="assets/css/home/assignments.css">
+  <link rel="stylesheet" href="assets/css/home/events.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <nav class="semesters">
+        <header>
+            <h3 class="section-title">semesters</h3>
+            <img src="assets/img/add.svg" class="add-button" id="add-semester-button"/>
+        </header>
+
+        <button class="semester-button">
+            <div class="wrapper">
+                <span>Fall 2019</span>
+                <h5>09/2019-12/2019</h5>
+            </div>
+            <img class="expand-semester" src="assets/img/expand.svg"/>
+            <img class="edit-semester" src="assets/img/edit.svg"/>
+        </button>
+
+        <button class="semester-button">
+            <div class="wrapper">
+                <span>Winter 2019</h4>
+                <h5>01/2019-04/2019</h5>
+            </div>
+            <img class="expand-semester" src="assets/img/expand.svg"/>
+            <img class="edit-semester" src="assets/img/edit.svg"/>
+        </button>
+    </nav>
+
+
+    <nav class="courses">
+        <header>
+            <h3 class="section-title">courses</h3>
+            <img class="add-button" id="add-course-button" src="assets/img/add.svg"/>
+        </header>
+
+        <button class="course-button">
+            <div class="course-color" id="a">
+                <span>CIS 2430</span>
+            </div>
+        </button>
+
+        <button class="course-button">
+            <div class="course-color" id="b">
+                <span>CIS 2910</span>
+            </div>
+        </button>
+
+        <button class="course-button">
+            <div class="course-color" id="c">
+                <span>STATS 2040</span>
+            </div>
+        </button>
+    </nav>
+
+
+    <nav class="assignments">
+        <header>
+            <h3 class="section-title">assignments</h3>
+            <img src="assets/img/add.svg" class="add-button" id="add-assignment-button"/>
+        </header>
+
+        <div class="assignment">
+            <div class="checkbox-wrapper">
+                <label>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            <div class="description-wrapper">
+                <span class="assignment-title">Assignment 1</span>
+                <h5 class="due-date">Nov. 15, 2019</h5>
+            </div>
+        </div>
+
+        <div class="assignment">
+            <div class="checkbox-wrapper">
+                <label>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            <div class="description-wrapper">
+                <span class="assignment-title">Assignment 2</span>
+                <h5 class="due-date">Nov. 23, 2019</h5>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="events">
+        <header>
+            <h3 class="section-title">events</h3>
+            <img src="assets/img/add.svg" class="add-button" id="add-event-button"/>
+        </header>
+
+        <div class="event">
+            <button class="remove-event-button">
+                <img src="assets/img/exit.svg"/>
+            </button>
+
+            <div class="description-wrapper">
+                <span class="event-title">Shift</span>
+                <h5 class="event-date">Nov. 22 2019</h5>
+            </div>
+        </div>
+
+        <div class="event">
+            <button class="remove-event-button">
+                <img src="assets/img/exit.svg"/>
+            </button>
+
+            <div class="description-wrapper">
+                <span class="event-title">Co-Op thing</span>
+                <h5 class="event-date">Nov. 27 2019</h5>
+            </div>
+        </div>
+    </nav>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+    user-select: none;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+button {
+    font-family: 'Source Sans Pro', sans-serif;
+    background: none;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+nav {
+    height: 100vh;
+    width: 25%;
+    box-sizing: border-box;
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+nav.semesters {
+    background-color: white;
+}
+
+nav.courses {
+    background-color: #f5f6fa;
+}
+
+nav.assignments {
+    background-color: #7f8c8d;
+}
+
+nav.events {
+    background-color: white;
+}
+
+nav header {
+    margin: 15px 30px 15px 30px;
+}
+
+nav h3.section-title {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    font-size: 26px;
+    color: #7f8c8d;
+    border-bottom: solid #7f8c8d 1.4px;
+    float: left;
+}
+
+.fa-plus {
+    font-size: 24px;
+}
+
+img.add-button {
+    height: 1.5em;
+    margin: 12px;
+    opacity: 0.5;
+}
+
+img.add-button:hover {
+    opacity: 1;
+    cursor: pointer;
+}

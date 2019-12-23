@@ -1,0 +1,102 @@
+nav.assignments {
+    color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+nav.assignments header {
+    margin: 15px 0 10px 0;
+}
+
+nav.assignments h3 {
+    color: white;
+    border-color: white;
+}
+
+.assignment {
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0.75em 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    width: 100%;
+}
+
+.assignment .description-wrapper {
+    display: inline-block;
+}
+
+.assignment .description-wrapper * {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+}
+
+.assignment .description-wrapper span {
+    font-weight: 400;
+}
+
+.assignment .description-wrapper h5 {
+    font-weight: 300;
+}
+
+.assignment .checkbox-wrapper {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: top;
+}
+
+.assignment input {
+    position: relative;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.assignment .checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    border: 2px solid white;
+    border-radius: 1000px;
+    background: none;
+}
+
+.checkmark:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+/* When the checkbox is checked, add a blue background */
+.assignment input:checked ~ .checkmark {
+    background-color: white;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.assignment input:checked ~ .checkmark:after {
+    display: inline-block;
+    opacity: 1;
+}
+
+/* Style the checkmark/indicator */
+.assignment .checkmark:after {
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid #7f8c8d;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
