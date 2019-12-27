@@ -1,0 +1,88 @@
+nav {
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+    width: 25%;
+    box-sizing: border-box;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+nav header {
+    margin: 1.5em 3em 0 3em;
+}
+
+nav#semesters {
+    background-color: white;
+}
+
+nav#courses {
+    background-color: #f5f6fa;
+}
+
+nav#assignments {
+    background-color: #7f8c8d;
+    color: white; 
+}
+
+nav#events {
+    background-color: white;
+}
+
+nav .section-title {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    font-size: 26px;
+    color: #7f8c8d;
+    border-bottom: solid #7f8c8d 1.25px;
+    float: left;
+}
+
+img#add-semester-button,
+img#add-course-button,
+img#add-assignment-button,
+img#add-event-button {
+    height: 1.5em;
+    margin: 1.25em;
+}
+
+.item-list {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1em 3em 3em 3em;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+	background-color: rgba(255,255,255,0);
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb {
+	border: 5px solid rgba(255,255,255,0);
+	background-clip: padding-box;
+}
+
+::-webkit-scrollbar-track {
+	background-color: rgba(127, 140, 141, 0.25);
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(127, 140, 141, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border: 4px solid rgba(255,255,255,0);
+}
+
+::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}

@@ -34,37 +34,33 @@ nav {
     margin: 0;
 }
 
-nav.semesters {
-    background-color: white;
-}
-
-nav.courses {
-    background-color: #f5f6fa;
-}
-
-nav.assignments {
-    background-color: #7f8c8d;
-}
-
-nav.events {
-    background-color: white;
-}
-
 nav header {
     margin: 15px 30px 15px 30px;
 }
 
-nav h3.section-title {
+nav#semesters {
+    background-color: white;
+}
+
+nav#courses {
+    background-color: #f5f6fa;
+}
+
+nav#assignments {
+    background-color: #7f8c8d;
+}
+
+nav#events {
+    background-color: white;
+}
+
+nav .section-title {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 300;
     font-size: 26px;
     color: #7f8c8d;
     border-bottom: solid #7f8c8d 1.4px;
     float: left;
-}
-
-.fa-plus {
-    font-size: 24px;
 }
 
 img.add-button {

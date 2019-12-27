@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+    user-select: none;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+button {
+    font-family: 'Source Sans Pro', sans-serif;
+    background: none;
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+img.img-button {
+    opacity: 0.5;
+}
+
+img.img-button:hover {
+    opacity: 1;
+    cursor: pointer;
+}

@@ -1,19 +1,20 @@
-nav.semesters header {
-    margin: 15px 30px 5px 30px;
+nav#semesters .item-list {
+    padding: 1em 0 3em 2em;
 }
 
 button.semester-button {
     width: 100%;
-    padding: 0.75em 30px;
+    padding: 0.75em 1em;
+    border-radius: 1em 0 0 1em;
     text-align: left;
-}
-
-button.semester-button:hover img.expand-semester {
-    display: inline-block;
 }
 
 button.semester-button:focus {
     background-color: #f5f6fa;
+}
+
+button.semester-button:hover img.expand-semester {
+    display: inline-block;
 }
 
 button.semester-button:focus img.edit-semester {
@@ -25,15 +26,8 @@ button.semester-button:focus img.expand-semester {
     display: none;
 }
 
-button.semester-button {
-    width: 100%;
-    padding: 0.75em 30px;
-    text-align: left;
-}
-
 button.semester-button .wrapper {
     display: inline-block;
-    /* width: 90%; */
 }
 
 button.semester-button .wrapper * {
@@ -55,11 +49,14 @@ button.semester-button .wrapper h5 {
     font-weight: 300;
 }
 
-button.semester-button img.expand-semester {
+button.semester-button img.img-button {
     display: none;
-    padding: 12px 0;
-    width: 10px;
+    padding: 1.25em 1.75em;
     float: right;
+}
+
+button.semester-button img.expand-semester {
+    width: 1em;
     opacity: 0.5;
 }
 
@@ -68,9 +65,10 @@ button.semester-button img.expand-semester:hover {
 }
 
 button.semester-button img.edit-semester {
-    display: none;
-    padding: 12px 0;
-    width: 17.5px;
-    float: right;
+    width: 1.75em;
     opacity: 0;
+}
+
+button.semester-button img.edit-semester:hover {
+    opacity: 1;
 }
