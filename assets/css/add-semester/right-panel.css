@@ -1,0 +1,79 @@
+.panel#new-course form {
+    box-sizing: border-box;
+}
+
+.panel#new-course .placeholder {
+    display: none;
+    width: 50%;
+    margin: 0 auto;
+    position: relative;
+    transform: translateY(-50%);
+    top: 50%;
+}
+
+.wrapper {
+    width: calc(100%-3em);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 4em;
+}
+
+.wrapper .input-wrapper {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.wrapper #weight-wrapper {
+    width: 30%;
+    padding-left: 3em;
+}
+
+.wrapper #code-wrapper {
+    width: 50%;
+}
+
+.wrapper input {
+    width: 100%;
+    display: block;
+    margin-bottom: 0.5em;
+    text-align: center;
+    font-size: 16px;
+}
+
+.wrapper span {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--grey);
+}
+
+.color-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2.5em 25%;
+    margin-left: 3em;
+}
+
+.color-wrapper .color {
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 1000px;
+    border: 3px solid var(--back);
+    display: inline-flex;
+    transition: border-color 0.25s;
+}
+
+.color-wrapper .color:hover {
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.panel#new-course img.save-button {
+    transform: translateX(-75%);
+    left: 75%;
+}

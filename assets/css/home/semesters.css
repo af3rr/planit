@@ -26,25 +26,25 @@ button.semester-button:focus img.expand-semester {
     display: none;
 }
 
-button.semester-button .wrapper {
+button.semester-button .semester-wrapper {
     display: inline-block;
 }
 
-button.semester-button .wrapper * {
+button.semester-button .semester-wrapper * {
     width: 100%;
     font-size: 18px; 
     font-weight: 400;
     color: #7f8c8d;
 }
 
-button.semester-button .wrapper span {
+button.semester-button .semester-wrapper span {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-button.semester-button .wrapper h5 {
+button.semester-button .semester-wrapper h5 {
     font-size: 16px; 
     font-weight: 300;
 }

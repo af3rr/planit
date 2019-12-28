@@ -1,0 +1,100 @@
+.panel {
+    width: 50%;
+    height: 100vh;
+    padding: 3.5em 5em 5em 2em;
+    box-sizing: border-box;
+    float: left;
+}
+
+.panel#new-semester {
+    background-color: white;
+}
+
+.panel#new-course {
+    background-color: var(--back);
+}
+
+.panel header {
+    width: 100%;
+    height: 2.5em;
+    margin-bottom: 4em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.panel header img.back-button {
+    width: 1.5em;
+    height: 1.5em;
+    display: inline-flex;
+    padding-right: 1.5em;
+}
+
+.panel input {
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    padding-bottom: 7.5px;
+    font-size: 26px;
+}
+
+.panel button {
+    width: calc(100% - 3em);
+    height: 4em;
+    padding: 0.5em;
+    margin-bottom: 2em;
+    border-radius: 1em;
+    float: right;
+}
+
+.panel .new-button-wrapper {
+    width: calc(100% - 3em);
+    float: right;
+}
+
+.panel button.new-button {
+    width: 100%;
+    border: 2px solid;
+}
+
+button.new-button svg.remove-course {
+    width: 1.75em;
+    height: 1.75em;
+    margin: 0.5em;
+    float: right;
+    opacity: 0.5;
+}
+
+button.new-button svg.remove-course:hover {
+    opacity: 1;
+}
+
+.panel button.add-button {
+    border: 2px dashed var(--grey);
+    opacity: 0.75;
+}
+
+.panel button.add-button:hover  {
+    opacity: 1;
+}
+
+.panel button.add-button img {
+    width: 2em;
+    padding: 0 0.5em;
+    vertical-align: middle;
+    opacity: inherit;
+}
+
+.panel button.add-button span {
+    vertical-align: middle;
+    color: var(--grey);
+    font-size: 18px;
+    opacity: inherit;
+}
+
+img.save-button {
+    width: 2.5em;
+    height: 2.5em;
+    position: absolute;
+    bottom: 5em;
+}

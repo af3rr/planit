@@ -33,3 +33,20 @@ img.img-button:hover {
     opacity: 1;
     cursor: pointer;
 }
+
+input {
+    border: none;
+    border-bottom: 2px solid var(--grey);
+    padding-bottom: 7.5px;
+    font-weight: 300;
+    color: var(--grey);
+    background: none;
+}
+
+input::placeholder {
+    opacity: 0.5;
+}
+
+input:focus {
+    outline: none;
+}
