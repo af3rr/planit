@@ -40,27 +40,27 @@
     color: white;
 }
 
-.input-wrapper {
+.time-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-top: 2.5em;
 }
 
-.input-wrapper * {
+.time-wrapper * {
     display: inline-block;
     font-size: 15.5px;
     font-weight: 300;
     color: var(--grey);
 }
 
-.input-wrapper input {
+.time-wrapper input {
     padding-bottom: 2.5px;
     text-align: center;
     width: 2.75em;
 }
 
-.input-wrapper button:hover {
+.time-wrapper button:hover {
     font-weight: 400;
 }
 

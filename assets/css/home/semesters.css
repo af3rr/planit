@@ -5,6 +5,7 @@ nav#semesters .item-list {
 button.semester-button {
     width: 100%;
     padding: 0.75em 1em;
+    margin-bottom: 1em;
     border-radius: 1em 0 0 1em;
     text-align: left;
 }

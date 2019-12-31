@@ -4,248 +4,80 @@
 
 
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
 
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/colors.css">
-  <link rel="stylesheet" href="assets/css/home/home.css">
-  <link rel="stylesheet" href="assets/css/home/semesters.css">
-  <link rel="stylesheet" href="assets/css/home/courses.css">
-  <link rel="stylesheet" href="assets/css/home/assignments.css">
-  <link rel="stylesheet" href="assets/css/home/events.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/colors.css">
+
+    <link rel="stylesheet" href="assets/css/home/home.css">
+    <link rel="stylesheet" href="assets/css/home/semesters.css">
+    <link rel="stylesheet" href="assets/css/home/courses.css">
+    <link rel="stylesheet" href="assets/css/home/assignments.css">
+    <link rel="stylesheet" href="assets/css/home/events.css">
+
+    <link rel="stylesheet" href="assets/css/add-semester/add-semester.css">
+    <link rel="stylesheet" href="assets/css/add-semester/left-panel.css">
+    <link rel="stylesheet" href="assets/css/add-semester/right-panel.css">
+    <link rel="stylesheet" href="assets/css/add-lecture/add-lecture.css">
+
+    <link rel="import" href="sections/pages/home.html">
+    <link rel="import" href="sections/pages/new-semester.html">
 </head>
 
 <body>
-    <section>
-        <nav id="semesters">
-            <header>
-                <h3 class="section-title">semesters</h3>
-                <img class="img-button" id="add-semester-button" src="assets/img/add.svg" draggable="false"/>
-            </header>
-
-            <div class="item-list">
-                <button class="semester-button">
-                    <div class="wrapper">
-                        <span>Fall 2018</span>
-                        <h5>09/2018-12/2018</h5>
-                    </div>
-
-                    <img class="img-button expand-semester" src="assets/img/expand.svg" draggable="false"/>
-                    <img class="img-button edit-semester" src="assets/img/edit.svg" draggable="false"/>
-                </button>
-
-                <button class="semester-button">
-                    <div class="wrapper">
-                        <span>Winter 2019</h4>
-                        <h5>01/2019-04/2019</h5>
-                    </div>
-
-                    <img class="img-button expand-semester" src="assets/img/expand.svg" draggable="false"/>
-                    <img class="img-button edit-semester" src="assets/img/edit.svg" draggable="false"/>
-                </button>
-
-                <button class="semester-button">
-                    <div class="wrapper">
-                        <span>Fall 2019</h4>
-                        <h5>09/2018-12/2018</h5>
-                    </div>
-
-                    <img class="img-button expand-semester" src="assets/img/expand.svg" draggable="false"/>
-                    <img class="img-button edit-semester" src="assets/img/edit.svg" draggable="false"/>
-                </button>
-
-                <button class="semester-button">
-                    <div class="wrapper">
-                        <span>Winter 2020</h4>
-                        <h5>01/2020-04/2020</h5>
-                    </div>
-
-                    <img class="img-button expand-semester" src="assets/img/expand.svg" draggable="false"/>
-                    <img class="img-button edit-semester" src="assets/img/edit.svg" draggable="false"/>
-                </button>
-
-                <button class="semester-button">
-                    <div class="wrapper">
-                        <span>Fall 2020</h4>
-                        <h5>09/2020-12/2020</h5>
-                    </div>
-
-                    <img class="img-button expand-semester" src="assets/img/expand.svg" draggable="false"/>
-                    <img class="img-button edit-semester" src="assets/img/edit.svg" draggable="false"/>
-                </button>
+    <template id="semester-button-template">
+        <button class="semester-button">
+            <div class="semester-wrapper">
+                <span></span>
+                <h5></h5>
             </div>
-        </nav>
+        
+            <img class="img-button expand-semester" src="assets/img/expand.svg" draggable="false"/>
+            <img class="img-button edit-semester" src="assets/img/edit.svg" draggable="false"/>
+        </button>
+    </template>
 
-
-        <nav id="courses">
-            <header>
-                <h3 class="section-title">courses</h3>
-                <img class="img-button" id="add-course-button" src="assets/img/add.svg" draggable="false"/>
-            </header>
-
-            <div class="item-list">
-                <button class="course-button">
-                    <div class="course-color-indicator A">
-                        <span>CIS 2430</span>
-                    </div>
-                </button>
-
-                <button class="course-button">
-                    <div class="course-color-indicator B">
-                        <span>CIS 2910</span>
-                    </div>
-                </button>
-
-                <button class="course-button">
-                    <div class="course-color-indicator C">
-                        <span>STATS 2040</span>
-                    </div>
-                </button>
-
-
-                <button class="course-button">
-                    <div class="course-color-indicator D">
-                        <span>CIS 2030</span>
-                    </div>
-                </button>
-
-
-                <button class="course-button">
-                    <div class="course-color-indicator E">
-                        <span>COOP 1100</span>
-                    </div>
-                </button>
-
-                <button class="course-button">
-                    <div class="course-color-indicator F">
-                        <span>CIS 2520</span>
-                    </div>
-                </button>
-
-                <button class="course-button">
-                    <div class="course-color-indicator G">
-                        <span>OTHER</span>
-                    </div>
-                </button>
+    <template id="course-button-template">
+        <button class="course-button">
+            <div class="course-color-indicator">
+                <span></span>
             </div>
-        </nav>
+        </button>
+    </template>
 
-
-        <nav id="assignments">
-            <header>
-                <h3 class="section-title">assignments</h3>
-                <img class="img-button" id="add-assignment-button" src="assets/img/add1.svg" draggable="false"/>
-            </header>
-
-            <div class="item-list">
-                <div class="assignment">
-                    <div class="checkbox-wrapper">
-                        <label>
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-
-                    <div class="description-wrapper">
-                        <span class="assignment-title">Assignment 1</span>
-                        <h5 class="due-date">Nov. 15, 2019</h5>
-                    </div>
-                </div>
-
-                <div class="assignment">
-                    <div class="checkbox-wrapper">
-                        <label>
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-
-                    <div class="description-wrapper">
-                        <span class="assignment-title">Assignment 2</span>
-                        <h5 class="due-date">Nov. 23, 2019</h5>
-                    </div>
-                </div>
-
-                <div class="assignment">
-                    <div class="checkbox-wrapper">
-                        <label>
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-
-                    <div class="description-wrapper">
-                        <span class="assignment-title">Assignment 3</span>
-                        <h5 class="due-date">Nov. 27, 2019</h5>
-                    </div>
-                </div>
-
-                <div class="assignment">
-                    <div class="checkbox-wrapper">
-                        <label>
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-
-                    <div class="description-wrapper">
-                        <span class="assignment-title">Assignment 4</span>
-                        <h5 class="due-date">Nov. 31, 2019</h5>
-                    </div>
-                </div>
-
-                <div class="assignment">
-                    <div class="checkbox-wrapper">
-                        <label>
-                            <input type="checkbox">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-
-                    <div class="description-wrapper">
-                        <span class="assignment-title">Assignment 5</span>
-                        <h5 class="due-date">Dec. 5, 2019</h5>
-                    </div>
-                </div>
+    <template id="assignment-button-template">
+        <div class="assignment">
+            <div class="checkbox-wrapper">
+                <label>
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
             </div>
-        </nav>
 
-
-        <nav id="events">
-            <header>
-                <h3 class="section-title">events</h3>
-                <img class="img-button" id="add-event-button" src="assets/img/add.svg" draggable="false"/>
-            </header>
-
-            <div class="item-list">
-                <div class="event">
-                    <button class="remove-event-button">
-                        <img class="img-button" src="assets/img/exit.svg" draggable="false"/>
-                    </button>
-
-                    <div class="description-wrapper">
-                        <span class="event-title">Shift</span>
-                        <h5 class="event-date">Nov. 22 2019</h5>
-                    </div>
-                </div>
-
-                <div class="event">
-                    <button class="remove-event-button">
-                        <img class="img-button" src="assets/img/exit.svg" draggable="false"/>
-                    </button>
-
-                    <div class="description-wrapper">
-                        <span class="event-title">Co-Op thing</span>
-                        <h5 class="event-date">Nov. 27 2019</h5>
-                    </div>
-                </div>
+            <div class="description-wrapper">
+                <span class="title"></span>
+                <h5 class="due-date"></h5>
             </div>
-        </nav>
-    
-        <script>
-            require("./assets/semesters.js")
-        </script>
-    </section>
+        </div>
+    </template>
+
+    <template id="event-button-template">
+        <div class="event">
+            <button class="remove-event-button">
+                <img class="img-button" src="assets/img/exit.svg" draggable="false"/>
+            </button>
+
+            <div class="description-wrapper">
+                <span>Co-Op thing</span>
+                <h5>Nov. 27 2019</h5>
+            </div>
+        </div>
+    </template>
+
+    <script>
+        require("./assets/load.js")
+        require("./assets/adjust.js")
+    </script>
 </body>
 
 

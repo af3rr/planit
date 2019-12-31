@@ -10,6 +10,10 @@ div.assignment {
     width: 100%;
 }
 
+div.assignment.last {
+    border: none;
+}
+
 div.assignment .description-wrapper {
     display: inline-block;
 }

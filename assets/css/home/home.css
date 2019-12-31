@@ -5,8 +5,6 @@ nav {
     width: 25%;
     box-sizing: border-box;
     float: left;
-    margin: 0;
-    padding: 0;
 }
 
 nav header {
@@ -39,19 +37,27 @@ nav .section-title {
     float: left;
 }
 
+nav .item-list {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1em 3em 3em 3em;
+}
+
+nav .item-list section {
+    display: none;
+}
+
+nav .item-list section.active {
+    display: block;
+}
+
 img#add-semester-button,
 img#add-course-button,
 img#add-assignment-button,
 img#add-event-button {
     height: 1.5em;
     margin: 1.25em;
-}
-
-.item-list {
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding: 1em 3em 3em 3em;
 }
 
 ::-webkit-scrollbar {

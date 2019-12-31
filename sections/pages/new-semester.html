@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-
-<html>
-
-
-<head>
-    <link rel="stylesheet" href="../../assets/css/main.css">
-    <link rel="stylesheet" href="../../assets/css/colors.css">
-    <link rel="stylesheet" href="../../assets/css/add-semester/add-semester.css">
-    <link rel="stylesheet" href="../../assets/css/add-semester/left-panel.css">
-    <link rel="stylesheet" href="../../assets/css/add-semester/right-panel.css">
-</head>
-
-<body>
-    <section id="new-semester">
+<template class="page-template">
+    <section id="new-semester" class="page">
         <div class="panel" id="new-semester">
             <header>
-                <img class="img-button back-button" src="../../assets/img/back.svg" draggable="false"/>
+                <img class="img-button back-button" src="assets/img/back.svg" draggable="false"/>
                 
                 <input id="semester-name" type="text" placeholder="new semester"/>
             </header>
@@ -43,17 +30,17 @@
             </div>
 
             <button class="add-button">
-                <img src="../../assets/img/course.svg" draggable="false"/>
+                <img src="assets/img/course.svg" draggable="false"/>
                 <span>add course</span>
             </button>
 
-            <img class="save-button img-button" src="../../assets/img/save.svg" draggable="false"/>
+            <img class="save-button img-button" src="assets/img/save.svg" draggable="false"/>
         </div>
 
         <div class="panel" id="new-course">
             <form>
                 <header>
-                    <img class="img-button back-button" src="../../assets/img/exit.svg" draggable="false"/>
+                    <img class="img-button back-button" src="assets/img/exit.svg" draggable="false"/>
                     
                     <input id="course-name" type="text" placeholder="new course"/>
                 </header>
@@ -97,7 +84,7 @@
                 </div>
 
                 <button class="add-button">
-                    <img src="../../assets/img/clock.svg" draggable="false"/>
+                    <img src="assets/img/clock.svg" draggable="false"/>
                     <span>add lecture time</span>
                 </button>
 
@@ -112,11 +99,8 @@
                 </div>
             </form>
 
-            <img class="placeholder" src="../../assets/img/course.svg" draggable="false"/>
-            <img class="save-button img-button" src="../../assets/img/check.svg" draggable="false"/>
+            <img class="placeholder" src="assets/img/course.svg" draggable="false"/>
+            <img class="save-button img-button" src="assets/img/check.svg" draggable="false"/>
         </div>
     </section>
-</body>
-
-
-</html>
+</template>

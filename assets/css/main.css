@@ -11,6 +11,14 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+section.page {
+    display: none;
+}
+
+section.page.active {
+    display: block;
+}
+
 button {
     font-family: 'Source Sans Pro', sans-serif;
     background: none;
