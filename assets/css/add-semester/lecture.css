@@ -1,4 +1,4 @@
-.popup-wrapper {
+#lecture .popup-wrapper {
     width: 25em;
     height: 30em;
     display: flex;
@@ -8,7 +8,7 @@
     padding: 3em;
 }
 
-.day-wrapper {
+#lecture .day-wrapper {
     width: 100%;
     height: 2.75em;
     line-height: 2.75em;
@@ -18,7 +18,7 @@
     text-align: center;
 }
 
-.day {
+#lecture .day {
     width: 2em;
     height: 100%;
     border: 1.5px solid var(--grey);
@@ -30,41 +30,41 @@
     transition: color 0.5s, background-color 0.5s;
 }
 
-.day:hover {
+#lecture .day:hover {
     font-weight: 400;
     cursor: pointer;
 }
 
-.day:active { /* change :active to modifier class */
+#lecture .day:active { /* change :active to modifier class */
     background-color: var(--grey);
     color: white;
 }
 
-.time-wrapper {
+#lecture .time-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-top: 2.5em;
 }
 
-.time-wrapper * {
+#lecture .time-wrapper * {
     display: inline-block;
     font-size: 15.5px;
     font-weight: 300;
     color: var(--grey);
 }
 
-.time-wrapper input {
+#lecture .time-wrapper input {
     padding-bottom: 2.5px;
     text-align: center;
     width: 2.75em;
 }
 
-.time-wrapper button:hover {
+#lecture .time-wrapper button:hover {
     font-weight: 400;
 }
 
-.button-wrapper {
+#lecture .button-wrapper {
     width: 50%;
     display: flex;
     flex-direction: row;
@@ -75,7 +75,7 @@
     transform: translateX(-50%);
 }
 
-.button-wrapper button {
+#lecture .button-wrapper button {
     width: 45%;
     height: 1.75em;
     display: inline-block;
@@ -86,6 +86,6 @@
     border-radius: 0.5em;
 }
 
-.button-wrapper button:hover {
+#lecture .button-wrapper button:hover {
     font-weight: 400;
 }

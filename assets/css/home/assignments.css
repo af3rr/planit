@@ -1,37 +1,67 @@
-nav#assignments .section-title {
+#assignments section {
+    display: none !important;
+    flex-direction: column;
+    height: 100%;
+}
+
+#assignments section.show {
+    display: flex !important;
+}
+
+#assignments section.show section.active {
+    display: block !important;
+}
+
+#assignments header .section-title {
     color: white;
     border-color: white;
 }
 
-div.assignment {
+#assignments .assignment {
+    display: flex;
+    flex-direction: row;
     box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
     padding: 1em 0 1.5em 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     width: 100%;
 }
 
-div.assignment.last {
+#assignments .assignment.last {
     border: none;
 }
 
-div.assignment .description-wrapper {
+#assignments .assignment .img-button,
+#assignments .assignment .checkbox {
+    margin-top: 0.5em;
+    margin-bottom: 0;
+}
+
+#assignments .assignment .assignment-wrapper {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#assignments .assignment .description-wrapper {
     display: inline-block;
 }
 
-div.assignment .description-wrapper * {
+#assignments .assignment .description-wrapper * {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 18px;
 }
 
-div.assignment .description-wrapper span {
+#assignments .assignment .description-wrapper span {
     font-weight: 400;
 }
 
-div.assignment .description-wrapper h5 {
+#assignments .assignment .description-wrapper h5 {
     font-weight: 300;
 }
 
-div.assignment .checkbox-wrapper {
+#assignments .assignment .checkbox-wrapper {
     width: 20px;
     height: 20px;
     display: inline-block;
@@ -39,56 +69,44 @@ div.assignment .checkbox-wrapper {
     vertical-align: top;
 }
 
-div.assignment input {
+#assignments .assignment input {
     position: relative;
     opacity: 0;
     height: 0;
     width: 0;
 }
 
-div.assignment .checkmark {
-    position: relative;
-    top: 0;
-    left: 0;
+#assignments .assignment .checkbox {
     height: 20px;
     width: 20px;
-    display: inline-block;
-    border: 2px solid white;
+    margin-right: 2em;
+    display: inline-flex;
+    align-items: center;
     border-radius: 1000px;
-    background: none;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
-div.assignment .checkmark:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+#assignments .assignment .checkbox:hover {
     cursor: pointer;
 }
 
-div.assignment .checkmark:after {
-    position: absolute;
-    left: 6px;
-    top: 2px;
-    width: 5px;
-    height: 10px;
-    border: solid #7f8c8d;
-    border-width: 0 3px 3px 0;
-    transform: rotate(45deg);
-    content: "";
-    display: none;
-}
-
-div.assignment input:checked ~ .checkmark {
-    background-color: white;
-}
-
-div.assignment input:checked ~ .checkmark:after {
-    display: inline-block;
+#assignments .assignment .checkbox .indicator {
+    height: 0;
+    width: 0;
+    margin: 0 auto;
+    display: block;
+    border-radius: 1000px;
+    background-color: #ffffff;
     opacity: 1;
 }
 
-nav#assignments ::-webkit-scrollbar-track {
-	background-color: rgba(255, 255, 255, 0.25);
+#assignments .assignment.complete .checkbox .indicator {
+    height: 60%;
+    width: 60%;
 }
 
-nav#assignments ::-webkit-scrollbar-thumb {
-	background-color: rgba(255, 255, 255, 0.5);
+#assignments form.create input.home-input, 
+#assignments form.create .datetime-wrapper img {
+    border-color: white;
+    color: white;
 }

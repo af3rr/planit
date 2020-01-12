@@ -1,34 +1,46 @@
-nav {
-    display: flex;
-    flex-flow: column;
+#home nav {
     height: 100vh;
     width: 25%;
+    display: flex;
+    flex-flow: column;
     box-sizing: border-box;
-    float: left;
+    position: absolute;
 }
 
-nav header {
+#home img {
+    box-sizing: content-box !important;
+}
+
+#home nav header {
     margin: 1.5em 3em 0 3em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-nav#semesters {
+#home nav#semesters {
     background-color: white;
+    left: 0;
 }
 
-nav#courses {
+#home nav#courses {
     background-color: #f5f6fa;
+    left: 25%;
 }
 
-nav#assignments {
+#home nav#assignments {
+    color: white;
     background-color: #7f8c8d;
-    color: white; 
+    transition: background-color 0.25s;
+    left: 50%;
 }
 
-nav#events {
+#home nav#events {
     background-color: white;
+    left: 75%;
 }
 
-nav .section-title {
+#home nav .section-title {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 300;
     font-size: 26px;
@@ -37,27 +49,56 @@ nav .section-title {
     float: left;
 }
 
-nav .item-list {
+#home nav .item-list {
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
     padding: 1em 3em 3em 3em;
 }
 
-nav .item-list section {
+#home nav .item-list section {
     display: none;
 }
 
-nav .item-list section.active {
-    display: block;
+#home nav .item-list section.active {
+    display: block !important;
 }
 
-img#add-semester-button,
-img#add-course-button,
-img#add-assignment-button,
-img#add-event-button {
+#home nav header img.img-button {
     height: 1.5em;
-    margin: 1.25em;
+    margin-top: 4px;
+    margin-left: 1.25em;
+}
+
+#home img.edit-item,
+#home img.delete-item {
+    display: none;
+}
+
+#home div.assignment.removed,
+#home div.event.removed {
+    display: none;
+}
+
+/* #home div.assignment .edit-item {
+    width: 20px;
+    height: 20px;
+    float: right;
+}
+ */
+
+#home div.assignment .edit-item,
+#home div.assignment .delete-item,
+#home div.event .delete-item {
+    width: 17.5px;
+    height: 17.5px;
+    float: right;
+}
+
+#home div.assignment:hover .edit-item,
+#home div.assignment:hover .delete-item,
+#home div.event:hover .delete-item {
+    display: inline-block;
 }
 
 ::-webkit-scrollbar {

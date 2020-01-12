@@ -1,75 +1,76 @@
-nav#semesters .item-list {
+#home #semesters .item-list {
     padding: 1em 0 3em 2em;
 }
 
-button.semester-button {
+#semesters button.semester-button {
     width: 100%;
     padding: 0.75em 1em;
     margin-bottom: 1em;
     border-radius: 1em 0 0 1em;
+    background-color: none;
     text-align: left;
 }
 
-button.semester-button:focus {
+#semesters button.semester-button.current {
     background-color: #f5f6fa;
 }
 
-button.semester-button:hover img.expand-semester {
+#semesters button.semester-button:hover img.expand-semester {
     display: inline-block;
 }
 
-button.semester-button:focus img.edit-semester {
+#semesters button.semester-button.current img.edit-semester {
     display: inline-block;
     opacity: 0.5;
 }
 
-button.semester-button:focus img.expand-semester {
-    display: none;
+#semesters button.semester-button.current img.expand-semester {
+    display: none !important;
 }
 
-button.semester-button .semester-wrapper {
+#semesters button.semester-button .semester-wrapper {
     display: inline-block;
 }
 
-button.semester-button .semester-wrapper * {
+#semesters button.semester-button .semester-wrapper * {
     width: 100%;
     font-size: 18px; 
     font-weight: 400;
     color: #7f8c8d;
 }
 
-button.semester-button .semester-wrapper span {
+#semesters button.semester-button .semester-wrapper span {
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-button.semester-button .semester-wrapper h5 {
+#semesters button.semester-button .semester-wrapper h5 {
     font-size: 16px; 
     font-weight: 300;
 }
 
-button.semester-button img.img-button {
+#semesters button.semester-button img.img-button {
     display: none;
     padding: 1.25em 1.75em;
     float: right;
 }
 
-button.semester-button img.expand-semester {
+#semesters button.semester-button img.expand-semester {
     width: 1em;
     opacity: 0.5;
 }
 
-button.semester-button img.expand-semester:hover {
+#semesters button.semester-button img.expand-semester:hover {
     opacity: 1;
 }
 
-button.semester-button img.edit-semester {
+#semesters button.semester-button img.edit-semester {
     width: 1.75em;
     opacity: 0;
 }
 
-button.semester-button img.edit-semester:hover {
+#semesters button.semester-button img.edit-semester:hover {
     opacity: 1;
 }

@@ -13,7 +13,7 @@ button.new-button span {
     display: inline-block;
 }
 
-.panel#new-semester img.save-button {
+.page-panel#new-semester img.save-button {
     transform: translateX(-25%);
     left: 25%;
 }

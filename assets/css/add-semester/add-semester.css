@@ -1,4 +1,4 @@
-.panel {
+.page-panel {
     width: 50%;
     height: 100vh;
     padding: 3.5em 5em 5em 2em;
@@ -6,39 +6,42 @@
     float: left;
 }
 
-.panel#new-semester {
+.page-panel#new-semester {
     background-color: white;
 }
 
-.panel#new-course {
+.page-panel#new-course {
     background-color: var(--back);
 }
 
-.panel header {
+.page-panel header {
     width: 100%;
-    height: 2.5em;
+    height: 3em;
     margin-bottom: 4em;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.panel header img.back-button {
+.page-panel img {
+    box-sizing: content-box !important;
+}
+
+.page-panel header img.back-button {
     width: 1.5em;
     height: 1.5em;
     display: inline-flex;
     padding-right: 1.5em;
 }
 
-.panel input {
+.page-panel input {
     width: 100%;
     height: 100%;
     display: inline-flex;
-    padding-bottom: 7.5px;
     font-size: 26px;
 }
 
-.panel button {
+.page-panel button {
     width: calc(100% - 3em);
     height: 4em;
     padding: 0.5em;
@@ -47,12 +50,12 @@
     float: right;
 }
 
-.panel .new-button-wrapper {
+.page-panel .new-button-wrapper {
     width: calc(100% - 3em);
     float: right;
 }
 
-.panel button.new-button {
+.page-panel button.new-button {
     width: 100%;
     border: 2px solid;
 }
@@ -69,32 +72,25 @@ button.new-button svg.remove-course:hover {
     opacity: 1;
 }
 
-.panel button.add-button {
+.page-panel button.add-button {
     border: 2px dashed var(--grey);
     opacity: 0.75;
 }
 
-.panel button.add-button:hover  {
+.page-panel button.add-button:hover  {
     opacity: 1;
 }
 
-.panel button.add-button img {
+.page-panel button.add-button img {
     width: 2em;
     padding: 0 0.5em;
     vertical-align: middle;
     opacity: inherit;
 }
 
-.panel button.add-button span {
+.page-panel button.add-button span {
     vertical-align: middle;
     color: var(--grey);
     font-size: 18px;
     opacity: inherit;
-}
-
-img.save-button {
-    width: 2.5em;
-    height: 2.5em;
-    position: absolute;
-    bottom: 5em;
 }

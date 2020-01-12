@@ -1,8 +1,8 @@
-.panel#new-course form {
+.page-panel#new-course form {
     box-sizing: border-box;
 }
 
-.panel#new-course .placeholder {
+.page-panel#new-course .placeholder {
     display: none;
     width: 50%;
     margin: 0 auto;
@@ -66,6 +66,7 @@
     border: 3px solid var(--back);
     display: inline-flex;
     transition: border-color 0.25s;
+    box-sizing: content-box !important;
 }
 
 .color-wrapper .color:hover {
@@ -73,7 +74,7 @@
     cursor: pointer;
 }
 
-.panel#new-course img.save-button {
+.page-panel#new-course img.save-button {
     transform: translateX(-75%);
     left: 75%;
 }
