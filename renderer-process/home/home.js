@@ -2,7 +2,7 @@ const settings = require('electron-settings')
 const Buttons = require('../../assets/buttons')
 
 const {ipcRenderer} = require('electron');
-const {User, Semester, Course, Assignment, Block} = require('../../assets/model')
+const {Assignment, Block} = require('../../assets/model')
 
 const user = settings.get('user')
 
@@ -17,6 +17,24 @@ const current = {
         return this.semester.courses.find(c => c.id === courseID)
     }
 }
+
+
+
+/* ADD SEMESTER BUTTON */
+
+$('#semesters header .img-button').on('click', (e) => {
+    var homePage = $('section.page#home')
+    var addSemesterPage = $('section.page#add-semester')
+
+    animateCSS(homePage, 'fadeOut faster', () => {
+        homePage.removeClass('active')
+    })
+
+    addSemesterPage.addClass('active')
+    animateCSS(addSemesterPage, 'fadeIn faster')
+})
+
+
 
 /* SEMESTER/COURSE SELECTION */
 
