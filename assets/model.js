@@ -1,12 +1,5 @@
 function User () {
-    this.semesters = []
-    this.events = []
-
-    this.addSemester = (s) => { this.semesters.push(s) }
-    this.removeSemester = (s) => { removeObject(semesters, s) }
-
-    this.addEvent = (e) => { this.events.push(e) }
-    this.removeEvent = (e) => { removeObject(events, e) }
+    this.semesters = [];
 }
 
 function Semester (semesterName, startDate, endDate) {
@@ -14,13 +7,21 @@ function Semester (semesterName, startDate, endDate) {
     this.start = startDate;
     this.end = endDate;
     this.courses = [];
+    this.events = [];
+    this.colors = {};
 
     this.startf = formatSemesterDate(this.start);
     this.endf = formatSemesterDate(this.end);
     this.id = toID(this.name)
+}
 
-    this.addCourse = (c) => { this.courses.push (c); }
-    this.removeCourse = (c) => { removeObject(courses, c) }
+Semester.clone = (obj) => {
+    var semester = new Semester(obj.name, new Date(obj.start), new Date(obj.end))
+
+    semester.courses = obj.courses
+    semester.colors = obj.colors
+
+    return semester
 }
 
 function Course (name="", code="", credits=0, color="X") {
@@ -31,65 +32,71 @@ function Course (name="", code="", credits=0, color="X") {
     this.id = toID(code);
     this.assignments = [];
     this.lectures = [];
-
-    this.addAssignment = (a) => { this.assignments.push(a); }
-    this.removeAssignment = (a) => { removeObject(assignments, a) }
-
-    this.addLecture = (l) => { this.lectures.push (l); }
-    this.removeLecture = (l) => { removeObject(lectures, l) }
 }
 
-function Time (string, period) {
-    this.time = string;
-    this.period = period.toLowerCase();
+Course.clone = (obj) => {
+    var course = new Course(obj.name, obj.code, obj.credits, obj.color)
 
-    this.string = (() => {
-        return `${this.time}${this.period}`
-    })();
+    course.assignments = obj.assignments
+    course.lectures = obj.lectures
+
+    return course
+}
+
+function Time (string) {
+    this.time = string.split(" ")[0];
+    this.period = string.split(" ")[1];
+    this.minutes = this.time.split(":")[1]
+    this.hours24 = this.time.split(":")[0]
 
     this.date = (() => {
-        return new Date(0, 0, 0, this.hours24, this.minutes, 0, 0)
+        let hh = parseInt(this.hours24)
+        let mm = parseInt(this.minutes)
+
+        return new Date(0, 0, 0, hh, mm, 0, 0)
     })();
 
     this.hours12 = (() => {
-        return parseInt(this.time.split(":")[0], 10);
+        return (parseInt(this.hours24) % 12) || 12
     })();
 
-    this.hours24 = (() => {
-        var hours = this.hours12
-
-        if(this.period == "PM" && hours<12) hours += 12;
-        if(this.period == "AM" && hours==12) hours -= 12;
-
-        return hours;
+    this.string = (() => {
+        return `${this.hours12}:${this.minutes}${this.period}`
     })();
 }
 
 Time.months = ["Jan.", "Feb.", "March", "Apr", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."]
 
 Time.fromDate = (date) => {
-    let hh = (date.getHours() % 12) || 12
+    let hh = date.getHours() 
     let mm = ("0" + date.getMinutes()).slice(-2)
     let period = (date.getHours() >= 12) ? "pm" : "am"
 
-    return new Time(`${hh}:${mm}`, period)
+    let t = new Time(`${hh}:${mm} ${period}`)
+
+    return t
 }
 
 Time.formatDateTime = (date) => {
     return `${Time.months[date.getMonth()]} ${date.getDate()}, ${Time.fromDate(date).string}`
 }
 
-function Assignment (name, da=new Date(), dd=new Date(), w=0) {
+function Assignment (name, da, dd, w=0) {
     this.name = name;
-    this.dateAssigned = da;
-    this.dateDue = dd;
+    this.assigned = da;
+    this.due = dd;
+    this.duef = Time.formatDateTime(dd)
     this.weight = w;
     this.status = "o";
     this.id = toID(this.name)
+}
 
-    this.dateDuef = (() => {
-        return Time.formatDateTime(this.dateDue);
-    })();
+Assignment.clone = (obj) => {
+    var assignment = new Assignment(obj.name, new Date(obj.assigned), new Date(obj.due), obj.weight)
+
+    assignment.status = obj.status
+
+    return assignment
 }
 
 function Block (startDate, endDate, desc="") {
@@ -98,13 +105,8 @@ function Block (startDate, endDate, desc="") {
     this.description = desc;
     this.id = toID(this.description)
 
-    this.startf = (() => {
-        return Time.formatDateTime(this.start);
-    })();
-
-    this.endf = (() => {
-        return Time.formatDateTime(this.end);
-    })();
+    this.startf = Time.formatDateTime(this.start);
+    this.endf = Time.formatDateTime(this.end);
 }
 
 function Lecture (startTime, endTime, type, days=[]) {
@@ -117,7 +119,7 @@ function Lecture (startTime, endTime, type, days=[]) {
 /* HELPER FUNCTIONS */
 
 function removeObject(list, item) {
-    const i = list.indexOf(item)
+    let i = list.indexOf(item)
     list.splice(i, 1)
 }
 
