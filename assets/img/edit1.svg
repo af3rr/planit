@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9.8 8.7"> 
     <style> 
-        path { fill: #7f8c8d; }
+        path { fill: white; }
         path.st0 { opacity:0.7; } 
         path.st1 { opacity:1;  } 
     </style> 
