@@ -9,8 +9,12 @@ let win
 
 function createWindow() {
     win = new BrowserWindow({
-        width: 800,
-        height: 600
+        width: 960,
+        height: 600,
+        resizable: true,
+        frame: false,
+        titleBarStyle: 'hidden',
+        trafficLightPosition: {x: 20, y: 40}
     })
 
     win.loadURL(isDev
