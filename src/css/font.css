@@ -1,0 +1,32 @@
+@font-face {
+    font-family: 'FSAlbert';
+    src: url('./font/font-bold.eot');                       /* IE9 Compat Modes */
+    src: url('./font/font-bold.woff') format('woff'),       /* Modern Browsers */
+         url('./font/font-bold.woff2') format('woff2'),     /* Modern Browsers */
+         url('./font/font-bold.ttf')  format('truetype'),   /* Safari, Android, iOS */
+         url('./font/font-bold.svg') format('svg');         /* Legacy iOS */
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FSAlbert';
+    src: url('./font/font-regular.eot');
+    src: url('./font/font-regular.woff') format('woff'),
+         url('./font/font-regular.woff2') format('woff2'),
+         url('./font/font-regular.ttf')  format('truetype'),
+         url('./font/font-regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FSAlbert';
+    src: url('./font/font-light.eot');
+    src: url('./font/font-light.woff') format('woff'),
+         url('./font/font-light.woff2') format('woff2'),
+         url('./font/font-light.ttf')  format('truetype'),
+         url('./font/font-light.svg') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
