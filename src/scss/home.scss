@@ -1,0 +1,53 @@
+@import 'color';
+@import './font.css';
+
+.home {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .sem-list {
+        padding-right: 25px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 100%;
+
+        .sem {
+            display: flex;
+            cursor: pointer;
+
+            &:hover {
+                .indicator {
+                    background-color: $blue0;
+                }
+            }
+
+            .indicator {
+                background-color: none;
+                border-radius: 0px 3px 3px 0px;
+                margin-right: 21px;
+                width: 4px;
+            }
+    
+            .sem-wrapper {
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box;
+
+                .sem-title {
+                    font-size: 18px;
+                    margin-bottom: 2.5px;
+                }
+
+                .sem-dates {
+                    font-size: 14px;
+                    font-weight: 300;
+                }
+            }
+        }
+
+        .sem:not(.last) {
+            margin-bottom: 20px;
+        }
+    }
+}

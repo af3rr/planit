@@ -14,7 +14,7 @@ function createWindow() {
         resizable: true,
         frame: false,
         titleBarStyle: 'hidden',
-        trafficLightPosition: {x: 20, y: 40}
+        trafficLightPosition: {x: 25, y: 50}
     })
 
     win.loadURL(isDev
