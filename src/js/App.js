@@ -7,6 +7,8 @@ import AddSemester from './forms/AddSemester'
 import data from './data.json'
 
 import '../css/main.css';
+import 'antd/dist/antd.less';
+
 
 class App extends React.Component {
     constructor() {

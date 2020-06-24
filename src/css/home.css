@@ -12,10 +12,14 @@
 }
 .home .sem-list .sem {
   display: flex;
+  margin-bottom: 20px;
   cursor: pointer;
 }
 .home .sem-list .sem:hover .indicator {
   background-color: #495266;
+}
+.home .sem-list .sem:last-child {
+  margin-bottom: 0;
 }
 .home .sem-list .sem .indicator {
   background-color: none;
@@ -36,6 +40,6 @@
   font-size: 14px;
   font-weight: 300;
 }
-.home .sem-list .sem:not(.last) {
-  margin-bottom: 20px;
+.home .sem-list .new * {
+  color: #E74C3C;
 }

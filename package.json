@@ -1,7 +1,9 @@
 {
     "name": "planit",
     "descripton": "A time management tool for post-secondary students.",
-    "repository": {"url": "https://github.com/af3rr/planit"},
+    "repository": {
+        "url": "https://github.com/aj-ferr/planit"
+    },
     "homepage": "./",
     "version": "0.1.0",
     "author": {
@@ -11,7 +13,7 @@
     "private": true,
     "main": "public/electron.js",
     "build": {
-        "appId": "com.af3rr.planit",
+        "appId": "com.aj-ferr.planit",
         "productName": "Planit",
         "files": [
             "build/**/*",
@@ -40,29 +42,35 @@
     },
     "scripts": {
         "dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
+        "start": "craco start",
+        "build": "craco build",
+        "test": "craco test",
         "eject": "react-scripts eject",
         "postinstall": "electron-builder install-app-deps",
         "preelectron-pack": "npm run build",
         "electron-pack": "electron-builder -m"
     },
     "dependencies": {
-        "@testing-library/jest-dom": "^4.2.4",
-        "@testing-library/react": "^9.5.0",
-        "@testing-library/user-event": "^7.2.1",
+        "antd": "^4.2.0",
         "devtron": "^1.4.0",
         "electron-is-dev": "^1.2.0",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
-        "react-scripts": "3.4.1"
+        "react-scripts": "3.4.1",
+        "uuid": "^8.0.0"
     },
     "devDependencies": {
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.5.0",
+        "@testing-library/user-event": "^7.2.1",
         "concurrently": "^5.2.0",
         "electron": "^8.2.5",
         "electron-builder": "^22.6.0",
-        "wait-on": "^4.0.2"
+        "wait-on": "^4.0.2",
+        "craco": "0.0.3",
+        "craco-less": "^1.17.0",
+        "less": "^3.11.1",
+        "less-loader": "^6.1.0"
     },
     "eslintConfig": {
         "extends": "react-app"

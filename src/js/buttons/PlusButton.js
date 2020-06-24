@@ -12,14 +12,15 @@ function PlusButton(props) {
 
     let imgCSS = () => ({
         marginRight: "10px",
-        width: "20px",
-        height: "20px",
+        width: "17.5px",
+        height: "17.5px",
         transform: `scale(${scale})`,
         transition: '0.25s ease'
     })
 
-    let enter = () => (setScale(scale + 0.1))
-    let exit = () => (setScale(scale - 0.1))
+    let enter = () => setScale(scale + 0.1)
+    
+    let exit = () => setScale(scale - 0.1)
 
     return (
         <button style={btnCSS()} onMouseEnter={enter} onMouseLeave={exit} onClick={props.onClick}>

@@ -1,6 +1,7 @@
 @import 'color';
 @import './font.css';
 
+
 .home {
     display: flex;
     flex-direction: column;
@@ -14,12 +15,17 @@
 
         .sem {
             display: flex;
+            margin-bottom: 20px;
             cursor: pointer;
 
             &:hover {
                 .indicator {
                     background-color: $blue0;
                 }
+            }
+
+            &:last-child{
+                margin-bottom: 0;
             }
 
             .indicator {
@@ -46,8 +52,8 @@
             }
         }
 
-        .sem:not(.last) {
-            margin-bottom: 20px;
+        .new * {
+            color: $highlight;
         }
     }
 }

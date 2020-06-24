@@ -4,17 +4,7 @@ import '../../css/home.css';
 
 
 class Home extends React.Component {
-    semClass(s, i) {
-        let cls = "sem"
-
-        if (i+1 === this.props.semesters.length) 
-            cls += " last"
-
-        if (++s.status < 2) 
-            cls += s.status === 1 ? " new" : ""
-
-        return cls
-    }
+    semClass = (s) => `sem ${(++s.status < 2 && s.status === 1) ? "new" : ""}`
 
     formatDates = (sem) => {
         let pad = (i) => (i.toString().padStart(2, '0'))
@@ -41,7 +31,7 @@ class Home extends React.Component {
                         let openSemester = () => this.props.goTo({name: 'Semester', data: s})
 
                         return (
-                            <div className={this.semClass(s, i)} key={i} onClick={openSemester}>
+                            <div className={this.semClass(s)} key={i} onClick={openSemester}>
                                 <div className="indicator"></div>
 
                                 <div className="sem-wrapper">
