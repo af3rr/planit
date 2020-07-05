@@ -1,0 +1,36 @@
+@import '../font.css';
+.edt-course-btn {
+  display: flex;
+  width: 100%;
+}
+.edt-course-btn:not(:last-child) {
+  margin-bottom: 10px;
+}
+.edt-course-btn .course-code {
+  text-align: center;
+  width: 100%;
+  border-radius: 3px 0 0 3px;
+  border-color: #C1C3C7;
+  border-right: none;
+}
+.edt-course-btn .course-code:hover, .edt-course-btn .course-code:focus {
+  background-color: #C1C3C725;
+  border-color: #C1C3C7;
+}
+.edt-course-btn .course-code .course-clr {
+  float: left;
+  height: 100%;
+}
+.edt-course-btn .course-code .course-clr .ant-badge-status-text {
+  display: none;
+}
+.edt-course-btn .course-del {
+  color: #C1C3C7;
+  border-radius: 0 3px 3px 0;
+  border-color: #C1C3C7;
+  width: auto;
+}
+.edt-course-btn .course-del:hover {
+  border-color: #ff4d4f;
+  color: #ff4d4f;
+}

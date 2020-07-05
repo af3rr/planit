@@ -4,6 +4,7 @@ import {Drawer} from 'antd';
 import Home from './drawers/Home'
 import Semester from './drawers/Semester'
 import AddSemester from './forms/AddSemester'
+import moment from 'moment'
 
 import '../css/main.css';
 import 'antd/dist/antd.less';
@@ -17,14 +18,15 @@ class App extends React.Component {
 
         // Convert strings to Date objects
         data.semesters.forEach((s) => {
-            s.start = new Date(s.start)
-            s.end = new Date(s.end)
+            s.start = moment(s.start)
+            s.end = moment(s.end)
         })
 
         this.state = {
             semesters: data.semesters,
             drawers: data.drawers,
-            drawerWidth: 300
+            drawerWidth: 300,
+            mask: 0
         }
     }
 
@@ -34,15 +36,17 @@ class App extends React.Component {
 
     openDrawer = (drawer) => {
         this.setState(prev => {
-            if (prev.open) prev.open.visible = false
+            if (prev.open) {
+                prev.open.visible = false
+                prev.open.level = 100
+            }
 
-            // Might be unnecessary. Should be able to just use drawer
             var nextDrawer = prev.drawers[drawer.name]
 
             nextDrawer.component = (() => {
                 switch (drawer.name || '') {
                     case 'AddSemester':
-                        return <AddSemester open={this.openDrawer} />
+                        return <AddSemester addSemester={this.addSemester} open={this.openDrawer} />
         
                     case 'ViewSemester':
                         return <Semester config={drawer.data} open={this.openDrawer} />
@@ -56,23 +60,24 @@ class App extends React.Component {
             })()
 
             // Bring nextDrawer to front and initiate animation
-            nextDrawer.level = 105
+            nextDrawer.level = 110
             nextDrawer.visible = true
             
             prev.open = nextDrawer
+            prev.mask = 1
 
             return prev
         })
     }
 
     drawerOpened = (drawer) => {
-        // Move closed drawer to back
-        if (!drawer.visible) {
-            this.setState(prev => {
-                prev.drawers[drawer.name].level = 100
-                return prev
-            })
-        }
+        this.setState({mask: 0})
+    }
+
+    addSemester = (semester) => {
+        this.setState(prev => ({
+            semesters: [...prev.semesters, semester]
+        }))
     }
 
     render() {
@@ -99,6 +104,8 @@ class App extends React.Component {
                             {config.component}
                         </Drawer>
                     ))}
+
+                    <div id="mask" style={{opacity: this.state.mask}}></div>
                 </div>
 
                 <div id="main" className="panel">
