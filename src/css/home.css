@@ -13,33 +13,37 @@
 .home .sem-list .sem {
   display: flex;
   margin-bottom: 20px;
+  color: #495266;
   cursor: pointer;
 }
 .home .sem-list .sem:hover .indicator {
-  background-color: #495266;
+  opacity: 1;
 }
 .home .sem-list .sem:last-child {
   margin-bottom: 0;
 }
+.home .sem-list .sem.new {
+  color: #F5222D;
+}
+.home .sem-list .sem.new .indicator {
+  background: #F5222D;
+}
 .home .sem-list .sem .indicator {
-  background-color: none;
+  background: #495266;
   border-radius: 0px 3px 3px 0px;
   margin-right: 21px;
+  opacity: 0;
   width: 4px;
+  transition: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 .home .sem-list .sem .sem-wrapper {
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
 }
 .home .sem-list .sem .sem-wrapper .sem-title {
   font-size: 18px;
-  margin-bottom: 2.5px;
 }
 .home .sem-list .sem .sem-wrapper .sem-dates {
   font-size: 14px;
   font-weight: 300;
-}
-.home .sem-list .new * {
-  color: #E74C3C;
 }

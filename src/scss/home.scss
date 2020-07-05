@@ -16,11 +16,12 @@
         .sem {
             display: flex;
             margin-bottom: 20px;
+            color: #495266;
             cursor: pointer;
 
             &:hover {
                 .indicator {
-                    background-color: $blue0;
+                    opacity: 1;
                 }
             }
 
@@ -28,21 +29,29 @@
                 margin-bottom: 0;
             }
 
+            &.new {
+                color: #F5222D;
+
+                .indicator {
+                    background: #F5222D;
+                }
+            }
+
             .indicator {
-                background-color: none;
+                background: #495266;
                 border-radius: 0px 3px 3px 0px;
                 margin-right: 21px;
+                opacity: 0;
                 width: 4px;
+                transition: 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
             }
     
             .sem-wrapper {
                 display: flex;
                 flex-direction: column;
-                box-sizing: border-box;
 
                 .sem-title {
                     font-size: 18px;
-                    margin-bottom: 2.5px;
                 }
 
                 .sem-dates {
@@ -50,10 +59,6 @@
                     font-weight: 300;
                 }
             }
-        }
-
-        .new * {
-            color: $highlight;
         }
     }
 }

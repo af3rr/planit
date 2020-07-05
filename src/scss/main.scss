@@ -4,12 +4,16 @@
 @import 'color';
 @import './font.css';
 
+
 * {
     margin: 0;
     padding: 0;
     user-select: none;
     font-family: 'FSAlbert';
-    color: $blue0;
+
+    ::not(.ant-btn) {
+        color: $main;
+    }
 
     button {
         border: none;
@@ -25,10 +29,10 @@
 
         #titlebar {
             position: fixed;
-            -webkit-app-region: drag;
             width: 100%;
             height: 50px;
             z-index: 15;
+            -webkit-app-region: drag;
         }
 
         .panel {
@@ -39,15 +43,23 @@
             top: 0;
         }
 
+        h1 {
+            color: $main;
+            font-weight: 500;
+            font-size: 36px;
+        }
+
         #side.panel {
-            background-color: white;
-            box-shadow: 5px 0px 20px #DADEE6;
-            width: 300px;
+            background-color: #F2F4F7;
             min-width: 300px;
             z-index: 10;
 
+            .ant-drawer-left.ant-drawer-open .ant-drawer-content-wrapper {
+                box-shadow: 5px 0px 20px #DADEE6;
+            }
+
             header {
-                margin: 65px 0 25px 0;
+                margin: 70px 0 25px 0;
                 padding: 0 25px;
             }
 
@@ -65,15 +77,128 @@
 }
 
 
+
+.red {
+    color: $red !important;
+    border-color: $red !important;
+    background-color: $red !important;
+
+    &.light {
+        background-color: $red-light !important;
+    }
+}
+
+.purple {
+    color: $purple !important;
+    border-color: $purple !important;
+    background-color: $purple !important;
+
+    &.light {
+        background-color: $purple-light !important;
+    }
+}
+
+.yellow {
+    color: $yellow !important;
+    border-color: $yellow !important;
+    background-color: $yellow !important;
+
+    &.light {
+        background-color: $yellow-light !important;
+    }
+}
+
+.gold {
+    color: $yellow1 !important;
+    border-color: $yellow1 !important;
+    background-color: $yellow1 !important;
+
+    &.light {
+        background-color: $yellow1-light !important;
+    }
+}
+
+.orange {
+    color: $orange !important;
+    border-color: $orange !important;
+    background-color: $orange !important;
+
+    &.light {
+        background-color: $orange-light !important;
+    }
+}
+
+.volcano {
+    color: $orange1 !important;
+    border-color: $orange1 !important;
+    background-color: $orange1 !important;
+
+    &.light {
+        background-color: $orange1-light !important;
+    }
+}
+
+.lime {
+    color: $green !important;
+    border-color: $green !important;
+    background-color: $green !important;
+
+    &.light {
+        background-color: $green-light !important;
+    }
+}
+
+.green {
+    color: $green1 !important;
+    border-color: $green1 !important;
+    background-color: $green1 !important;
+
+    &.light {
+        background-color: $green1-light !important;
+    }
+}
+
+.cyan {
+    color: $cyan !important;
+    border-color: $cyan !important;
+    background-color: $cyan !important;
+
+    &.light {
+        background-color: $cyan-light !important;
+    }
+}
+
+.blue {
+    color: $blue !important;
+    border-color: $blue !important;
+    background-color: $blue !important;
+
+    &.light {
+        background-color: $blue-light !important;
+    }
+}
+
+.geekblue {
+    color: $blue1 !important;
+    border-color: $blue1 !important;
+    background-color: $blue1 !important;
+
+    &.light {
+        background-color: $blue1-light !important;
+    }
+}
+
+
+
 ::-webkit-scrollbar {
-    width: 55px;
-	background-color: none;
+    width: 15px;
 }
 
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-thumb {
 	background-clip: padding-box;
-    border: 25px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 1px solid transparent;
     border-top: none;
     border-bottom: none;
     transition: 0.5s ease;
@@ -89,7 +214,8 @@
 
 ::-webkit-scrollbar-thumb:hover {
 	background-color: #828999;
-    border: 24px solid transparent;
+    border-left: 9px solid transparent;
+    border-right: 0px solid transparent;
     border-top: none;
     border-bottom: none;
 }

@@ -1,19 +1,21 @@
 import React from 'react';
+import {Drawer} from 'antd';
 
-import Home from './panels/Home'
-import Semester from './panels/Semester'
+import Home from './drawers/Home'
+import Semester from './drawers/Semester'
 import AddSemester from './forms/AddSemester'
-
-import data from './data.json'
 
 import '../css/main.css';
 import 'antd/dist/antd.less';
+
+import data from './data.json'
 
 
 class App extends React.Component {
     constructor() {
         super()
 
+        // Convert strings to Date objects
         data.semesters.forEach((s) => {
             s.start = new Date(s.start)
             s.end = new Date(s.end)
@@ -21,31 +23,56 @@ class App extends React.Component {
 
         this.state = {
             semesters: data.semesters,
-            panel: <Home semesters={data.semesters} goTo={this.open} />
+            drawers: data.drawers,
+            drawerWidth: 300
         }
     }
 
-    open = (panel) => {
-        let p = null
+    componentDidMount() {
+        this.openDrawer({name: 'Home'})
+    }
 
-        switch (panel.name || "") {
-            case 'AddSemester':
-                p = <AddSemester goTo={this.open} />
-                break
+    openDrawer = (drawer) => {
+        this.setState(prev => {
+            if (prev.open) prev.open.visible = false
 
-            case 'Semester':
-                p = <Semester semester={panel.data} goTo={this.open} />
-                break
+            // Might be unnecessary. Should be able to just use drawer
+            var nextDrawer = prev.drawers[drawer.name]
 
-            case 'SlideOut':
-                break
+            nextDrawer.component = (() => {
+                switch (drawer.name || '') {
+                    case 'AddSemester':
+                        return <AddSemester open={this.openDrawer} />
+        
+                    case 'ViewSemester':
+                        return <Semester config={drawer.data} open={this.openDrawer} />
+        
+                    case 'SlideOut':
+                        return null // Second level of slide out
+        
+                    default:
+                        return <Home semesters={prev.semesters} open={this.openDrawer} />
+                }
+            })()
 
-            default:
-                p = <Home semesters={this.state.semesters} />
-                break
+            // Bring nextDrawer to front and initiate animation
+            nextDrawer.level = 105
+            nextDrawer.visible = true
+            
+            prev.open = nextDrawer
+
+            return prev
+        })
+    }
+
+    drawerOpened = (drawer) => {
+        // Move closed drawer to back
+        if (!drawer.visible) {
+            this.setState(prev => {
+                prev.drawers[drawer.name].level = 100
+                return prev
+            })
         }
-
-        this.setState({panel: p})
     }
 
     render() {
@@ -54,11 +81,28 @@ class App extends React.Component {
                 <div id="titlebar"></div>
 
                 <div id="side" className="panel">
-                    {this.state.panel}
+                    {Object.entries(this.state.drawers).map(([_, config], i) => (
+                        <Drawer
+                            key={i}
+                            style={{width: `${this.state.drawerWidth}px`}}
+                            bodyStyle={{padding: 0}}
+                            width={this.state.drawerWidth}
+                            placement="left"
+                            mask={false}
+                            closable={false}
+                            zIndex={config.level}
+                            visible={config.visible}
+                            getContainer={'#side.panel'}
+                            onClose={() => this.closeDrawer(config)}
+                            afterVisibleChange={() => this.drawerOpened(config)}
+                        >
+                            {config.component}
+                        </Drawer>
+                    ))}
                 </div>
 
                 <div id="main" className="panel">
-
+                    
                 </div>
             </div>
         )

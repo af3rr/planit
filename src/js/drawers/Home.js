@@ -4,20 +4,19 @@ import '../../css/home.css';
 
 
 class Home extends React.Component {
-    semClass = (s) => `sem ${(++s.status < 2 && s.status === 1) ? "new" : ""}`
-
     formatDates = (sem) => {
         let pad = (i) => (i.toString().padStart(2, '0'))
 
         let [s, e] = [sem.start, sem.end]
-
         let [sM, sD] = [pad(s.getMonth()+1), pad(s.getDate())]
         let [eM, eD] = [pad(e.getMonth()+1), pad(e.getDate())]
 
         return `${sM}/${sD}/${s.getYear()-100} - ${eM}/${eD}/${e.getYear()-100}`
     }
 
-    openAddSem = () => this.props.goTo({name: 'AddSemester'})
+    openAddSem = () => {
+        this.props.open({name: 'AddSemester'})
+    }
 
     render() {
         return (
@@ -27,11 +26,11 @@ class Home extends React.Component {
                 </header>
 
                 <div className="sem-list">
-                    {this.props.semesters.map((s, i) => {
-                        let openSemester = () => this.props.goTo({name: 'Semester', data: s})
+                    {this.props.semesters.map((s, i) => {                        
+                        let openSemester = () => this.props.open({name: 'ViewSemester', data: s})
 
                         return (
-                            <div className={this.semClass(s)} key={i} onClick={openSemester}>
+                            <div key={i} className={`sem ${++s.status === 1 ? 'new' : ''}`} onClick={openSemester}>
                                 <div className="indicator"></div>
 
                                 <div className="sem-wrapper">
@@ -50,8 +49,5 @@ class Home extends React.Component {
         )
     }
 }
-
-
-
 
 export default Home
