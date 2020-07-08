@@ -1,0 +1,20 @@
+@import '../color';
+@import '../font.css';
+
+
+.course-config {
+    display: flex;
+    flex-direction: column;
+
+    fieldset {
+        .course-code {
+            float: left;
+            width: 57.5%;
+        }
+        
+        .course-credits {
+            float: right;
+            width: 35%;
+        }
+    }
+}
