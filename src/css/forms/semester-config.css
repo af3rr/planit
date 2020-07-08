@@ -1,10 +1,10 @@
-@import './font.css';
-.add-semester {
+@import '../font.css';
+.semester-config {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
-.add-semester .fieldset {
+.semester-config fieldset {
   display: flex;
   flex-direction: column;
   padding: 0 25px;
@@ -12,20 +12,20 @@
   max-height: 100%;
   overflow-y: hidden;
 }
-.add-semester .fieldset .sem-name, .add-semester .fieldset .date-rng {
+.semester-config fieldset .sem-name, .semester-config fieldset .date-rng {
   margin-top: 2px;
 }
-.add-semester .fieldset .course-add {
+.semester-config fieldset .course-add {
   width: 100%;
   font-size: 12px;
   margin-bottom: 5px;
 }
-.add-semester .fieldset .group {
+.semester-config fieldset .group {
   margin-bottom: 10px;
 }
-.add-semester footer button {
+.semester-config footer button {
   width: 45%;
 }
-.add-semester footer button:last-child {
+.semester-config footer button:last-child {
   float: right;
 }

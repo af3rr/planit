@@ -6,7 +6,7 @@
   font-family: "FSAlbert";
 }
 * ::not(.ant-btn) {
-  color: #495266;
+  color: #424959;
 }
 * button {
   border: none;
@@ -32,14 +32,15 @@
   box-sizing: border-box;
   height: 100%;
 }
-* .app h1 {
+* .app h1, * .app h2, * .app h3, * .app h4, * .app h5 {
   margin: 0;
-  color: #495266;
-  font-weight: 500;
+  color: #424959;
+}
+* .app h1 {
   font-size: 36px;
 }
 * .app #side.panel {
-  background-color: #F2F4F7;
+  background: #F2F4F7;
   min-width: 300px;
   z-index: 100;
 }
@@ -48,11 +49,14 @@
 }
 * .app #side.panel #mask {
   position: fixed;
-  background-color: #F2F4F7;
+  box-sizing: content-box;
+  padding-right: 5px;
+  background: #F2F4F7;
   z-index: 105;
   min-width: 300px;
   transition: 0.3s;
   height: 100%;
+  cursor: ew-resize;
 }
 * .app #side.panel header {
   margin: 70px 0 30px 0;
@@ -63,107 +67,8 @@
   padding: 0 25px;
 }
 * .app #main.panel {
-  background-color: #F2F4F7;
+  background: #F2F4F7;
   width: 100%;
-}
-
-.red {
-  color: #f5222d !important;
-  border-color: #f5222d !important;
-  background-color: #f5222d !important;
-}
-.red.light {
-  background-color: #f5222d25 !important;
-}
-
-.purple {
-  color: #722ed1 !important;
-  border-color: #722ed1 !important;
-  background-color: #722ed1 !important;
-}
-.purple.light {
-  background-color: #722ed125 !important;
-}
-
-.yellow {
-  color: #fadb14 !important;
-  border-color: #fadb14 !important;
-  background-color: #fadb14 !important;
-}
-.yellow.light {
-  background-color: #fadb1425 !important;
-}
-
-.gold {
-  color: #faad14 !important;
-  border-color: #faad14 !important;
-  background-color: #faad14 !important;
-}
-.gold.light {
-  background-color: #faad1425 !important;
-}
-
-.orange {
-  color: #fa8c16 !important;
-  border-color: #fa8c16 !important;
-  background-color: #fa8c16 !important;
-}
-.orange.light {
-  background-color: #fa8c1625 !important;
-}
-
-.volcano {
-  color: #fa541c !important;
-  border-color: #fa541c !important;
-  background-color: #fa541c !important;
-}
-.volcano.light {
-  background-color: #fa541c25 !important;
-}
-
-.lime {
-  color: #a0d911 !important;
-  border-color: #a0d911 !important;
-  background-color: #a0d911 !important;
-}
-.lime.light {
-  background-color: #a0d91125 !important;
-}
-
-.green {
-  color: #52c41a !important;
-  border-color: #52c41a !important;
-  background-color: #52c41a !important;
-}
-.green.light {
-  background-color: #52c41a25 !important;
-}
-
-.cyan {
-  color: #13c2c2 !important;
-  border-color: #13c2c2 !important;
-  background-color: #13c2c2 !important;
-}
-.cyan.light {
-  background-color: #13c2c225 !important;
-}
-
-.blue {
-  color: #1890ff !important;
-  border-color: #1890ff !important;
-  background-color: #1890ff !important;
-}
-.blue.light {
-  background-color: #1890ff25 !important;
-}
-
-.geekblue {
-  color: #2f54eb !important;
-  border-color: #2f54eb !important;
-  background-color: #2f54eb !important;
-}
-.geekblue.light {
-  background-color: #2f54eb25 !important;
 }
 
 ::-webkit-scrollbar {
@@ -181,15 +86,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #E1E6ED;
+  background: #E1E6ED;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #B8BECC;
+  background: #B8BECC;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #828999;
+  background: #828999;
   border-right: 19px solid transparent;
   border-left: 0px solid transparent;
   border-top: none;
@@ -203,5 +108,5 @@
 }
 
 ::-webkit-scrollbar-corner {
-  background-color: transparent;
+  background: transparent;
 }

@@ -29,7 +29,7 @@ class Home extends React.Component {
                                 <div className="indicator"></div>
 
                                 <div className="sem-wrapper">
-                                    <span className="sem-title"> {s.title} </span>
+                                    <span className="sem-title"> {s.name} </span>
                                     <span className="sem-dates"> {this.dateRange(s)} </span>
                                 </div>
                             </div>

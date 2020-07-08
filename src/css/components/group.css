@@ -24,6 +24,9 @@
   overflow-y: auto;
   top: -10px;
 }
+.group .wrapper .ant-empty {
+  margin: 10px 0 5px;
+}
 .group .wrapper::-webkit-scrollbar {
   display: none;
 }

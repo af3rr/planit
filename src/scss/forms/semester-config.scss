@@ -1,13 +1,13 @@
-@import 'color';
-@import './font.css';
+@import '../color';
+@import '../font.css';
 
 
-.add-semester {
+.semester-config {
     display: flex;
     flex-direction: column;
     height: 100%;
 
-    .fieldset {
+    fieldset {
         display: flex;
         flex-direction: column;
         padding: 0 25px;

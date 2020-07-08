@@ -28,6 +28,10 @@
         overflow-y: auto;
         top: -10px;
 
+        .ant-empty {
+            margin: 10px 0 5px;
+        }
+
         &::-webkit-scrollbar {
             display: none;
         }

@@ -3,7 +3,7 @@ import {Drawer} from 'antd';
 
 import Home from './drawers/Home'
 import Semester from './drawers/Semester'
-import AddSemester from './forms/AddSemester'
+import SemesterConfig from './forms/SemesterConfig'
 import moment from 'moment'
 
 import '../css/main.css';
@@ -46,7 +46,7 @@ class App extends React.Component {
             nextDrawer.component = (() => {
                 switch (drawer.name || '') {
                     case 'AddSemester':
-                        return <AddSemester addSemester={this.addSemester} open={this.openDrawer} />
+                        return <SemesterConfig title='Add Semester' save={this.saveSemester} open={this.openDrawer} />
         
                     case 'ViewSemester':
                         return <Semester config={drawer.data} open={this.openDrawer} />
@@ -74,7 +74,7 @@ class App extends React.Component {
         this.setState({mask: 0})
     }
 
-    addSemester = (semester) => {
+    saveSemester = (semester) => {
         this.setState(prev => ({
             semesters: [...prev.semesters, semester]
         }))
