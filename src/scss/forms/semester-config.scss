@@ -1,0 +1,42 @@
+@import '../color';
+@import '../font.css';
+
+
+.semester-config {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    fieldset {
+        display: flex;
+        flex-direction: column;
+        padding: 0 25px;
+        height: 100%;
+        max-height: 100%;
+        overflow-y: hidden;
+
+        .sem-name, .date-rng {
+            margin-top: 2px;
+        }
+
+        .course-add {
+            width: 100%;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .group {
+            margin-bottom: 10px;
+        }
+    }
+
+    footer {
+        button {
+            width: 45%;
+
+            &:last-child {
+                float: right;
+            }
+        }
+    }
+}

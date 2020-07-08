@@ -1,22 +1,93 @@
 {
-  "name": "planit",
-  "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron .",
-    "dev": "electron . --debug"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/af3r/planit.git"
-  },
-  "dependencies": {
-    "devtron": "^1.4.0",
-    "electron": "^5.0.1",
-    "electron-settings": "^3.2.0",
-    "glob": "^7.1.0"
-  },
-  "author": "AJ Ferron",
-  "license": "MIT"
+    "name": "planit",
+    "descripton": "A time management tool for post-secondary students.",
+    "repository": {
+        "url": "https://github.com/aj-ferr/planit"
+    },
+    "homepage": "./",
+    "version": "0.1.0",
+    "author": {
+        "name": "AJ Ferron",
+        "email": "aferron@uoguelph.ca"
+    },
+    "private": true,
+    "main": "public/electron.js",
+    "build": {
+        "appId": "com.aj-ferr.planit",
+        "productName": "Planit",
+        "files": [
+            "build/**/*",
+            "node_modules/**/*"
+        ],
+        "directories": {
+            "buildResources": "assets"
+        },
+        "mac": {
+            "category": "public.app-category.productivity"
+        },
+        "dmg": {
+            "contents": [
+                {
+                    "x": 100,
+                    "y": 135
+                },
+                {
+                    "x": 300,
+                    "y": 135,
+                    "type": "link",
+                    "path": "/Applications"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
+        "start": "craco start",
+        "build": "craco build",
+        "test": "craco test",
+        "eject": "react-scripts eject",
+        "postinstall": "electron-builder install-app-deps",
+        "preelectron-pack": "npm run build",
+        "electron-pack": "electron-builder -m"
+    },
+    "dependencies": {
+        "antd": "^4.4.0",
+        "devtron": "^1.4.0",
+        "electron-is-dev": "^1.2.0",
+        "node": "14.5.0",
+        "rc-animate": "^3.1.0",
+        "rc-queue-anim": "^1.8.5",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-scripts": "3.4.1",
+        "uuid": "^8.2.0"
+    },
+    "devDependencies": {
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.5.0",
+        "@testing-library/user-event": "^7.2.1",
+        "concurrently": "^5.2.0",
+        "craco": "0.0.3",
+        "craco-less": "^1.17.0",
+        "electron": "^8.3.4",
+        "electron-builder": "^22.7.0",
+        "less": "^3.11.1",
+        "less-loader": "^6.1.0",
+        "wait-on": "^4.0.2"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
 }
