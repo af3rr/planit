@@ -1,6 +1,8 @@
 import React from 'react'
 import Animate from 'rc-animate';
+
 import {Close} from './Icons'
+import Hoverable from '../modifiers/Hoverable'
 
 import '../../css/components/dialog.css';
 
@@ -24,7 +26,9 @@ function Dialog(props) {
                             <h2> {props.title} </h2>
                             
                             <button onClick={() => props.close()}>
-                                <Close scale={0.65} /> 
+                                <Hoverable scale={0.65}> 
+                                    <Close />
+                                </Hoverable>
                             </button>
                         </header>
 
