@@ -1,0 +1,54 @@
+@import '../font.css';
+.home {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.home .sem-list {
+  padding-right: 25px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
+}
+.home .sem-list .sem {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  color: #495266;
+}
+.home .sem-list .sem:hover .sem-wrapper .indicator {
+  opacity: 1;
+}
+.home .sem-list .sem:hover .modifier {
+  opacity: 0.5;
+}
+.home .sem-list .sem:hover .modifier:hover {
+  opacity: 1;
+}
+.home .sem-list .sem:last-child {
+  margin-bottom: 0;
+}
+.home .sem-list .sem.new .sem-wrapper {
+  color: #F5222D;
+}
+.home .sem-list .sem.new .sem-wrapper .indicator {
+  background: #F5222D;
+}
+.home .sem-list .sem .sem-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-left: 25px;
+  width: 100%;
+}
+.home .sem-list .sem .sem-wrapper .sem-title {
+  font-size: 18px;
+  text-align: left;
+}
+.home .sem-list .sem .sem-wrapper .sem-dates {
+  font-size: 14px;
+  font-weight: 300;
+}
+.home .sem-list .sem .modifier {
+  align-self: center;
+  opacity: 0;
+}

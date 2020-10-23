@@ -1,5 +1,5 @@
 const electron = require('electron')
-const isDev = require('electron-is-dev')
+const DEBUG = require('electron-is-dev')
 const path = require('path')
 
 const app = electron.app
@@ -19,14 +19,12 @@ function createWindow() {
 
     BrowserWindow.addDevToolsExtension('/Users/aj/Library/Application Support/Google/Chrome/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/4.8.2_20')
 
-    win.loadURL(isDev
+    win.loadURL(DEBUG
         ? 'http://localhost:3000'
         : `file://${path.join(__dirname, '../build/index.html')}`,
     )
 
-    win.on('closed', () => {
-        win = null
-    })
+    win.on('closed', () => {win = null})
 }
 
 app.on('ready', createWindow)

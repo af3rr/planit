@@ -1,116 +1,162 @@
 import React from 'react';
+import moment from 'moment'
 import {Drawer} from 'antd';
+import {v4 as uuid} from 'uuid'
 
+import Dialog from './components/Dialog'
 import Home from './drawers/Home'
 import Semester from './drawers/Semester'
 import SemesterConfig from './forms/SemesterConfig'
-import moment from 'moment'
+import DialogContext from './contexts/DialogContext'
 
 import '../css/main.css';
 import 'antd/dist/antd.less';
 
-import data from './data.json'
+import TEST_USER from './test_user.json'
 
 
 class App extends React.Component {
     constructor() {
         super()
 
-        // Convert strings to Date objects
-        data.semesters.forEach((s) => {
+        // Convert date strings to Moment objects
+        TEST_USER.semesters.forEach((s) => {
             s.start = moment(s.start)
             s.end = moment(s.end)
+            s.id = uuid()
+
+            s.courses.forEach(c => c.id = uuid())
         })
 
+        const STD_DIALOG = {
+            title: '',
+            content: undefined,
+            visible: false,
+            width: 375
+        }
+
         this.state = {
-            semesters: data.semesters,
-            drawers: data.drawers,
+            open: undefined,
             drawerWidth: 300,
-            mask: 0
+            semesters: TEST_USER.semesters,
+            dialog: {
+                config: STD_DIALOG,
+                closeDialog: c => this.setState(s => {s.dialog.config = c || STD_DIALOG; return s}),
+                openDialog: c => this.setState(s => {s.dialog.config = c; return s})
+            },
+            drawers: {
+                Home: {name: 'Home'},
+                Semester: {name: 'Semester'},
+                SemesterConfig: {name: 'SemesterConfig'}
+            }
         }
     }
 
+
     componentDidMount() {
+        /* FETCH USER DATA HERE */
+
         this.openDrawer({name: 'Home'})
     }
 
-    openDrawer = (drawer) => {
-        this.setState(prev => {
-            if (prev.open) {
-                prev.open.visible = false
-                prev.open.level = 100
+
+    openDrawer = ({name, config}) => {
+        this.setState(state => {            
+            const drawer = state.drawers[name]
+
+            if (state.open) {
+                state.open.visible = false
+                state.open.level = 100
             }
 
-            var nextDrawer = prev.drawers[drawer.name]
-
-            nextDrawer.component = (() => {
-                switch (drawer.name || '') {
-                    case 'AddSemester':
-                        return <SemesterConfig title='Add Semester' save={this.saveSemester} open={this.openDrawer} />
-        
-                    case 'ViewSemester':
-                        return <Semester config={drawer.data} open={this.openDrawer} />
-        
-                    case 'SlideOut':
-                        return null // Second level of slide out
-        
-                    default:
-                        return <Home semesters={prev.semesters} open={this.openDrawer} />
-                }
-            })()
-
-            // Bring nextDrawer to front and initiate animation
-            nextDrawer.level = 110
-            nextDrawer.visible = true
+            // Bring drawer to front and initiate animation
+            drawer.level = 110
+            drawer.visible = true
+            drawer.config = config
             
-            prev.open = nextDrawer
-            prev.mask = 1
+            state.open = drawer
+            state.mask = 1
 
-            return prev
+            return state
         })
     }
 
-    drawerOpened = (drawer) => {
-        this.setState({mask: 0})
+
+    semCtrl = { // Functions for adding/removing/updating semesters
+        add: (sem) => {
+            this.setState(prev => ({
+                semesters: [...prev.semesters, sem]
+            }))
+        },
+        delete: (sem) => {
+            this.setState(prev => ({
+                semesters: prev.semesters.filter(s => s.id !== sem.id)
+            }))
+        },
+        update: (sem) => {
+            this.setState(prev => ({
+                semesters: prev.semesters.map(s => (s.id === sem.id) ? sem : s)
+            }))
+        }
     }
 
-    saveSemester = (semester) => {
-        this.setState(prev => ({
-            semesters: [...prev.semesters, semester]
-        }))
-    }
 
     render() {
         return (
             <div className="app">
                 <div id="titlebar"></div>
 
-                <div id="side" className="panel">
-                    {Object.entries(this.state.drawers).map(([_, config], i) => (
-                        <Drawer
-                            key={i}
-                            style={{width: `${this.state.drawerWidth}px`}}
-                            bodyStyle={{padding: 0}}
-                            width={this.state.drawerWidth}
-                            placement="left"
-                            mask={false}
-                            closable={false}
-                            zIndex={config.level}
-                            visible={config.visible}
-                            getContainer={'#side.panel'}
-                            onClose={() => this.closeDrawer(config)}
-                            afterVisibleChange={() => this.drawerOpened(config)}
-                        >
-                            {config.component}
-                        </Drawer>
-                    ))}
+                <DialogContext.Provider value={this.state.dialog}>
+                    <div id="side" className="panel">
+                        {Object.entries(this.state.drawers).map(([name, drawer], i) => (
+                            <Drawer
+                                key={i}
+                                style={{width: `${this.state.drawerWidth}px`}}
+                                bodyStyle={{padding: 0}}
+                                width={300}
+                                placement="left"
+                                mask={false}
+                                closable={false}
+                                zIndex={drawer.level}
+                                visible={drawer.visible}
+                                getContainer={'#side.panel'}
+                                destroyOnClose={true}
+                                afterVisibleChange={() => this.setState({mask: 0})}
+                                onClose={() => this.closeDrawer(drawer)}
+                            >
+                                {
+                                    {
+                                        'Home': <Home semesters={this.state.semesters} navigate={this.openDrawer} />,
+                                        'Semester': <Semester config={drawer.config} navigate={this.openDrawer} />,
+                                        'SlideOut': null,
+                                        'SemesterConfig': <SemesterConfig 
+                                            config={drawer.config}
+                                            semCtrl={this.semCtrl}
+                                            navigate={this.openDrawer}
+                                        />
+                                    }[name]
+                                }
+                            </Drawer>
+                        ))}
+                    </div>
 
-                    <div id="mask" style={{opacity: this.state.mask}}></div>
-                </div>
+                    <div id="main" className="panel"></div>
 
-                <div id="main" className="panel">
-                    
-                </div>
+                    <DialogContext.Consumer>
+                        {({config, closeDialog}) => (
+                            <Dialog 
+                                title={config.title}
+                                visible={config.visible}
+                                close={closeDialog}
+                                width={375}
+                                overlay 
+                            >
+                                {config.content}
+                            </Dialog>
+                        )}
+                    </DialogContext.Consumer>
+
+                </DialogContext.Provider>
             </div>
         )
     }

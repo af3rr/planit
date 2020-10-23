@@ -1,0 +1,57 @@
+{
+    "semesters": [
+        {
+            "name": "Winter 2020",
+            "start": "2020-01-06T05:00:00.000Z",
+            "end": "2020-04-20T04:00:00.000Z",
+            "courses": [
+                {
+                    "name": "Analysis & Design of Algorithms",
+                    "code": "CIS 3490",
+                    "credits": 0.5,
+                    "color": {"name": "Yellow", "code": "#FADB14"}
+                },
+                {
+                    "name": "Operating Systems",
+                    "code": "CIS 3110",
+                    "credits": 0.5,
+                    "color": {"name": "Orange", "code": "#FA8C16"}
+                },
+                {
+                    "name": "System Development & Integration",
+                    "code": "CIS 2750",
+                    "credits": 0.75,
+                    "color": {"name": "Red", "code": "#D93021"}
+                },
+                {
+                    "name": "UI Design",
+                    "code": "CIS 2170",
+                    "credits": 0.5,
+                    "color": {"name": "Blue", "code": "#45AAF2"}
+                }
+            ],
+            "status": 1
+        },
+        {
+            "name": "Fall 2019",
+            "start": "2019-09-06T04:00:00.000Z",
+            "end": "2019-12-18T05:00:00.000Z",
+            "courses": [],
+            "status": 0
+        },
+        {
+            "name": "Winter 2019",
+            "start": "2019-01-06T05:00:00.000Z",
+            "end": "2019-04-20T04:00:00.000Z",
+            "courses": [],
+            "status": 1
+        },
+        {
+            "name": "Fall 2018",
+            "start": "2018-09-06T04:00:00.000Z",
+            "end": "2018-12-18T05:00:00.000Z",
+            "courses": [],
+            "status": 1
+        }
+    ]
+}

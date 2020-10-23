@@ -1,0 +1,77 @@
+@import '../color';
+@import '../font.css';
+
+
+
+.home {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .sem-list {
+        padding-right: 25px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 100%;
+
+        .sem {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            color: #495266;
+
+            &:hover {
+                .sem-wrapper {
+                    .indicator {
+                        opacity: 1;
+                    }
+                }
+
+                .modifier {
+                    opacity: 0.5;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+
+            }
+
+            &:last-child{
+                margin-bottom: 0;
+            }
+
+            &.new {
+                .sem-wrapper {
+                    color: #F5222D;
+
+                    .indicator {
+                        background: #F5222D;
+                    }
+                }
+            }
+
+            .sem-wrapper {
+                display: flex;
+                flex-direction: column;
+                padding-left: 25px;
+                width: 100%;
+
+                .sem-title {
+                    font-size: 18px;
+                    text-align: left;
+                }
+
+                .sem-dates {
+                    font-size: 14px;
+                    font-weight: 300;
+                }
+            }
+
+            .modifier {
+                align-self: center;
+                opacity: 0;
+            }
+        }
+    }
+}
