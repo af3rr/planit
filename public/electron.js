@@ -17,7 +17,7 @@ function createWindow() {
         trafficLightPosition: {x: 25, y: 50}
     })
 
-    BrowserWindow.addDevToolsExtension('/Users/aj/Library/Application Support/Google/Chrome/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/4.7.0_53')
+    BrowserWindow.addDevToolsExtension('/Users/aj/Library/Application Support/Google/Chrome/Default/Extensions/fmkadmapgofadopljbjfkapdkoienihi/4.8.2_20')
 
     win.loadURL(isDev
         ? 'http://localhost:3000'
