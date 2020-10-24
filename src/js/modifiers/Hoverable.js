@@ -3,7 +3,9 @@ import React from 'react'
 function Hoverable(props) {
     const [scale, setScale] = React.useState(props.scale || 1)
 
-    let CSS = () => ({
+    const g = props.g  || 0.1
+
+    var CSS = () => ({
         transform: `scale(${scale})`,
         transition: `0.3s ease`
     })
@@ -11,8 +13,8 @@ function Hoverable(props) {
     return (
         <div 
             className="modifier" 
-            onMouseEnter={() => setScale(scale + 0.1)} 
-            onMouseLeave={() => setScale(scale - 0.1)}
+            onMouseEnter={() => setScale(scale + g)} 
+            onMouseLeave={() => setScale(scale - g)}
             style={CSS()} 
         >
             {props.children}

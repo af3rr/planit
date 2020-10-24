@@ -1,0 +1,13 @@
+@import '../font.css';
+.course-config {
+  display: flex;
+  flex-direction: column;
+}
+.course-config fieldset .course-code {
+  float: left;
+  width: 57.5%;
+}
+.course-config fieldset .course-credits {
+  float: right;
+  width: 35%;
+}

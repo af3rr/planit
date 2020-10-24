@@ -1,0 +1,46 @@
+@import '../color';
+@import '../font.css';
+
+
+.edt-course-btn {
+    display: flex;
+    width: 100%;
+
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    .course-code {
+        text-align: center;
+        width: 100%;
+        border-radius: 3px 0 0 3px;
+        border-color: #C1C3C7;
+        border-right: none;
+
+        &:hover, &:focus {
+            background-color: #C1C3C725;
+            border-color: #C1C3C7;
+        }
+        
+        .course-clr {
+            float: left;
+            height: 100%;
+
+            .ant-badge-status-text {
+                display: none;
+            }
+        }
+    }
+
+    .del-course {
+        color: #C1C3C7;
+        border-radius: 0 3px 3px 0;
+        border-color: #C1C3C7;
+        width: auto;
+
+        &:hover, &:focus {
+            border-color: #ff4d4f;
+            color: #ff4d4f;
+        }
+    }
+}
